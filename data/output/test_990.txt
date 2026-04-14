@@ -1,0 +1,28 @@
+
+=== IRS 990 DATA ===
+Organization: Foundation For Rocky Ford Schools
+EIN: 201641095
+Location: Rocky Ford, CO
+NTEE Code: B112
+
+Financial Summary (Most Recent):
+  Total Revenue:  $0
+  Total Expenses: $0
+  Total Assets:   $0
+
+Filing History (13 filings found):
+
+  Year 2024:
+    Revenue:  $35,834
+    Expenses: $87,936
+    Assets:   $1,484,946
+
+  Year 2023:
+    Revenue:  $33,076
+    Expenses: $91,420
+    Assets:   $1,488,853
+
+  Year 2022:
+    Revenue:  $28,610
+    Expenses: $3,823
+    Assets:   $1,583,994
