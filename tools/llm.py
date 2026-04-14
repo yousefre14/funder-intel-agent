@@ -72,7 +72,7 @@ def _call_groq(prompt: str, system_prompt: str = "") -> str:
         model=config.GROQ_MODEL,
         messages=messages,
         max_tokens=config.MAX_TOKENS,
-        temperature=0.3,  # Lower = more focused/factual
+        temperature=0.3,  # more factual
     )
     
     config.track_usage("groq")
