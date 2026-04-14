@@ -59,7 +59,6 @@ def research_funder_990(funder_name: str) -> dict:
     
     console.print(f"  [dim]Found: {org.get('name')} (EIN: {ein})[/dim]")
     
-    # Get detailed info
     details = get_nonprofit_details(ein)
     filings = get_nonprofit_filings(ein)
     
