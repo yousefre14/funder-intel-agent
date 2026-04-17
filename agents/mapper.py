@@ -17,6 +17,10 @@ from rich.panel import Panel
 from tools.llm import call_llm
 from tools.org_knowledge import get_full_context, search_org_knowledge, get_relevant_context, build_knowledge_base
 from prompts.alignments import ALIGNMENT_SYSTEM_PROMPT, ALIGNMENT_PROMPT
+    
+from agents.reasercher import research_funder
+from agents.connector import find_connection_paths
+
 import config
 
 console = Console()
@@ -54,7 +58,7 @@ def create_alignment_brief(
         console.print("[dim]Finding relevant org content for this funder...[/dim]")
         relevant_context = get_relevant_context(
             funder_priorities=funder_profile[:2000],  # Use start of profile as search
-            n_results=10,  # Get top 10 most relevant chunks
+            n_results=10,  # top 10 most relevant chunks
         )
         
         full_context = get_full_context()
@@ -133,32 +137,43 @@ def _save_alignment(funder_name: str, result: dict):
         
         console.print(f"  [dim]Saved: {filepath}[/dim]")
 
-def full_research_and_alignment(
+
+def full_pipeline(
     funder_name: str,
     website_url: str = None,
 ) -> dict:
-        from agents.reasercher import research_funder
+    """
+    COMPLETE pipeline: Research → Alignment → Connections
     
-        console.print(Panel.fit(
-                f"[bold blue]Full Pipeline: {funder_name}[/bold blue]\n"
-                "Research → Alignment Mapping",
-                border_style="blue"
-            ))
-            
-            # ---- Stage 1: Research ----
-        console.print("\n[bold]═══ STAGE 1: FUNDER RESEARCH ═══[/bold]\n")
-        research_result = research_funder(funder_name, website_url)
-            
-            # ---- Stage 2: Alignment ----
-        console.print("\n[bold]═══ STAGE 2: ALIGNMENT MAPPING ═══[/bold]\n")
-        alignment_result = create_alignment_brief(
-                funder_name=funder_name,
-                funder_profile=research_result["profile"],
-            )
-            
-            # ---- Combined result ----
-        return {
-                "funder_name": funder_name,
-                "research": research_result,
-                "alignment": alignment_result,
-            }
+    This replaces full_research_and_alignment with the full chain.
+    """
+    
+    console.print(Panel.fit(
+        f"[bold blue]Full Pipeline: {funder_name}[/bold blue]\n"
+        "Research → Alignment → Connection Paths",
+        border_style="blue"
+    ))
+    
+    # ---- Stage 1: Research ----
+    console.print("\n[bold]═══ STAGE 1: FUNDER RESEARCH ═══[/bold]\n")
+    research_result = research_funder(funder_name, website_url)
+    
+    # ---- Stage 2: Alignment ----
+    console.print("\n[bold]═══ STAGE 2: ALIGNMENT MAPPING ═══[/bold]\n")
+    alignment_result = create_alignment_brief(
+        funder_name=funder_name,
+        funder_profile=research_result["profile"],
+    )
+    
+    # ---- Stage 3: Connections ----
+    console.print("\n[bold]═══ STAGE 3: CONNECTION PATHS ═══[/bold]\n")
+    connection_result = find_connection_paths(
+        target_name=funder_name,
+    )
+    
+    return {
+        "funder_name": funder_name,
+        "research": research_result,
+        "alignment": alignment_result,
+        "connections": connection_result,
+    }

@@ -1,19 +1,14 @@
-RAW RESEARCH DATA: MIT foundation
-Generated: 2026-04-14T16:26:51.145922
+RAW RESEARCH DATA: mit foundation
+Generated: 2026-04-15T14:47:54.403049
 
 ============================================================
 
 
 === OVERVIEW ===
 
-Source: MIT Fundraising Priorities
-URL: https://betterworld.mit.edu/fundraising-priorities/
-Content: MIT strives to educate the whole student by supporting academic success, fostering community and individual well-being, and cultivating personal and
-----------------------------------------
-
-Source: MIT Office of Foundation Relations
-URL: https://foundations.mit.edu/
-Content: About Us. The MIT community is driven by a shared purpose: to transform society for the better through education, research, and innovation.
+Source: Foundation Relations - MIT Resource Development - MIT Resource Development
+URL: https://development.mit.edu/teams/foundation-relations/
+Content: The Office of Foundation Relations develops relationships across MIT and with private foundations and philanthropic entities to create mission-aligned opportunities for meaningful impact. ## What We Do. The Office of Foundation Relations (OFR) drives MIT’s strategic relationships with private foundations and philanthropic entities in collaboration with senior leadership, faculty, and staff. By highlighting the breadth of MIT’s exceptional work, OFR aims to inspire deeper connections between MIT 
 ----------------------------------------
 
 Source: Funding Priorities | MIT - Massachusetts Institute of Technology
@@ -21,42 +16,47 @@ URL: https://chancellor.mit.edu/priorities
 Content: Funding Priorities · Make an MIT education affordable and accessible to the brightest minds from around the world · Create new and revitalized campus spaces that
 ----------------------------------------
 
-Source: Institute-level themes and priorities - MIT Office of the President
-URL: https://president.mit.edu/writing-speeches/institute-level-themes-and-priorities
-Content: We're driving efforts to advance MIT's mission of research, education and service. MIT is a community of brilliant individuals with boundless ideas and
+Source: Institute-level themes and priorities | MIT Organization Chart
+URL: https://orgchart.mit.edu/letters/institute-level-themes-and-priorities
+Content: I believe there are many significant areas where, as a creative community, the people of MIT can do more together if the Institute actively fosters and supports new collaborations on compelling global problems. Through my listening tour and in conversations since, I’ve heard clearly that we could magnify MIT’s positive impact if we made it easier for faculty to “go big” – to pursue their most innovative ideas in their discipline, to collaborate with others outside their field on important proble
 ----------------------------------------
 
-Source: Foundational Support | MIT for a Better World
-URL: https://betterworld.mit.edu/foundational-support/
-Content: Student success is central to MIT's mission. Scholarships ensure access to an MIT education for many students each year and serve as powerful recruitment
+Source: Philanthropic Foundations | MIT Solve
+URL: https://solve.mit.edu/partner/foundations
+Content: Philanthropic foundations drive bold visions, MIT Solve delivers the solutions to match. solve_052324_144434-3-(1).jpg-responsive.jpg) The-AI-for-Humanity-Prize-Patrick-J.-McGovern-Foundation,-Consultation-Corral--Elise-Blasingame-(1).jpg-responsive.jpg)  Learn more. Work with Solve to design and run a bespoke innovation competition that delivers high-potential, tech-driven solutions tailored to your goals. By sponsoring a prize for our Global Challenges, your foundation supports high-potential,
+----------------------------------------
+
+Source: 1.1 Mission and Objectives | Policies
+URL: https://policies.mit.edu/policies-procedures/10-institute/11-mission-and-objectives
+Content: email link to this page. # 1.1 Mission and Objectives. This policy was last updated October 18, 2022. See the update history page for more information. ## Mission. The mission of MIT is to advance knowledge and educate students in science, technology, and other areas of scholarship that will best serve the nation and the world in the 21st century. MIT is dedicated to providing its students with an education that combines rigorous academic study and the excitement of discovery with the support an
 ----------------------------------------
 
 
 === RECENT GRANTS ===
-
-Source: MIT Global Seed Funds announces recipients of its 2024-2025 cycle
-URL: https://cis.mit.edu/news/mit-global-seed-funds-announces-recipients-its-2024-2025-cycle
-Content: A total of 102 international research projects received more than $2.5 million in funding for the 2024-2025 cycle.
-----------------------------------------
 
 Source: 2025 Momentum Grants | MIT Climate Project
 URL: https://climateproject.mit.edu/2025-momentum-grants
 Content: Earlier this year, five Climate Project-Deshpande Center Momentum Grants were awarded. The 2025 Momentum Grants are a joint initiative between the MIT
 ----------------------------------------
 
+Source: MIT Global Seed Funds announces recipients of its 2024-2025 cycle
+URL: https://cis.mit.edu/news/mit-global-seed-funds-announces-recipients-its-2024-2025-cycle
+Content: A total of 102 international research projects received more than $2.5 million in funding for the 2024-2025 cycle.
+----------------------------------------
+
 Source: Lemelson-MIT awards 2024-25 InvenTeam grants to eight high ...
 URL: https://news.mit.edu/2024/lemelson-mit-awards-inventeam-grants-1104
-Content: Each $7,500 grant allows high schoolers to solve real-world problems with technological solutions. Brian Lombardo | Lemelson-MIT Program.
+Content: Each team will each receive $7,500 in grant funding and year-long support to build a technological invention to solve a problem of their own
 ----------------------------------------
 
-Source: J-WEL grants for MIT researchers
-URL: https://www.jwel.mit.edu/grants/latest-grants
-Content: In 2024, Education Innovation Grants totaling $749,768 supported 11 research projects proposed by investigators in nine departments, labs, centers,
+Source: Current GSF Winners | Center for International Studies - MIT
+URL: https://cis.mit.edu/opportunities/faculty/global-seed-funds/current-gsf-winners
+Content: Current GSF Winners: 2024-2025 Cycle, General Seed Fund, Hayashi-ULVAC, MIT Greater China Fund for Innovation, MIT-Africa Seed Fund, MIT-Amazonia Seed Fund.
 ----------------------------------------
 
-Source: Eight with MIT ties win 2025 Hertz Foundation Fellowships
-URL: https://news.mit.edu/2025/hertz-foundation-fellowships-0602
-Content: Eight students with ties to MIT have won 2025 Hertz Foundation Fellowships. The awardees receive up to $250000 an an unusual degree of
+Source: PhD candidate Nagisa Tadjfar receives Horowitz Foundation grant
+URL: https://economics.mit.edu/news/phd-candidate-nagisa-tadjfar-receives-horowitz-foundation-grant
+Content: Tadjfar is one of twenty scholars to receive a 2025 grant for research in the social sciences. The funding will support her work on Screening or Exclusion?
 ----------------------------------------
 
 
@@ -65,6 +65,11 @@ Content: Eight students with ties to MIT have won 2025 Hertz Foundation Fellowsh
 Source: Program Officer, Education
 URL: https://capd.mit.edu/jobs/robertson-foundation-program-officer-education/
 Content: This new team member will play a central role in translating that strategy into action—helping the Foundation demonstrate what transformative
+----------------------------------------
+
+Source: MIT - Leadership Giving Officer - Cambridge MA 02139
+URL: https://careers.peopleclick.com/careerscp/client_mit/external/jobDetails/jobDetail.html?jobPostId=32368&localeCode=en-us
+Content: MIT Logo HR MIT Logo. **Working at MIT offers opportunities that just aren’t found anywhere else**, including generous and unique benefits that help to ensure that MIT employees are healthy, supported, and enjoy a fulfilling work/life balance. Discover more about what it's like to work at MIT. We welcome people from all walks of life to bring their talent, ideas, and experience to our community. MIT provides pay ranges representing its good faith estimate of what the Institute reasonably expects
 ----------------------------------------
 
 Source: Leadership Giving Officer, Massachusetts Institute of Technology (MIT)
@@ -77,11 +82,6 @@ URL: https://careers.peopleclick.com/careerscp/client_mit/external/jobDetails/jo
 Content: This position manages, builds, and executes successful fundraising strategies for a mature portfolio (including Core Team) creating
 ----------------------------------------
 
-Source: Leadership Giving Officer - Cambridge MA 02139 - MIT
-URL: https://careers.peopleclick.com/careerscp/client_mit/external/jobDetails/jobDetail.html?jobPostId=32368&localeCode=en-us
-Content: Responsibilities include collaborating with the IMES director, key faculty and investigators, administration and finance officer, education
-----------------------------------------
-
 Source: Leadership & Staff | Lemelson
 URL: https://lemelson.mit.edu/forging-pathway-invention-education/leadership-staff
 Content: # Leadership & Staff. #### Wendy E. #### Brenda Burke-Lyons. #### Michael Cima, PhD. #### Stephanie Couch, PhD. #### Sam Estabrooks. #### Leigh Estabrooks. #### Tamara Galoyan, PhD. Invention Education Learning and Curriculum Specialist. #### Liza Goldstein. #### Tracy Jean-Chronberg. #### Brian Lombardo. #### Edwin Marrero. #### Anna Montano. #### Cristina Sáenz, PhD. #### Kaitlyn Searl. ## Don't Miss Our Next Newsletter! 101 Rogers Street, Suite 3C,  Cambridge, MA 02142. info-lemelson@mit.edu 
@@ -90,19 +90,14 @@ Content: # Leadership & Staff. #### Wendy E. #### Brenda Burke-Lyons. #### Micha
 
 === NEWS ===
 
-Source: News and Announcements | MIT Office of the Vice President for Research
-URL: https://research.mit.edu/about/news-and-announcements
-Content: Information on U.S. government actions and MIT’s research enterprise is posted on our **News & Announcements** page. * Changes to federal research policy (requires Touchstone login). * Video: State of the MIT Research Enterprise (requires Touchstone login). ## U.S. government shutdown: Information for the MIT research community. ## Letter: New funding features in Research@MIT. Enhanced views for funding and forecasting are now available to PIs and administrators in the Research@MIT app. ## Lette
-----------------------------------------
-
 Source: Announcements & Notes - MIT Museum
 URL: https://mitmuseum.mit.edu/more/announcements
 Content: Announcements. MIT Museum Receives $1.46 Million in Funding and Related Support from Simons Foundation and Simons Foundation International. January 23, 2026.
 ----------------------------------------
 
-Source: A new platform for developing advanced metals at scale | MIT News | Massachusetts Institute of Technology
-URL: https://news.mit.edu/2025/new-platform-foundation-alloy-developing-advanced-metals-scale-0703
-Content: The company, founded by a team from MIT, is capable of producing a new class of ultra-high-performance metal alloys using a novel production process that doesn’t rely on melting raw materials. “This is an entirely new approach to making metals,” says CEO Jake Guglin MBA ’19, who co-founded Foundation Alloy with Schuh, Jasper Lienhard ’15, PhD ’22, and Tim Rupert PhD ’11. “Chris wanted to look at metals from different perspectives and make things more economically efficient and higher performance
+Source: News and Announcements | MIT Office of the Vice President for Research
+URL: https://research.mit.edu/about/news-and-announcements
+Content: Information on U.S. government actions and MIT’s research enterprise is posted on our **News & Announcements** page. * Changes to federal research policy (requires Touchstone login). * Video: State of the MIT Research Enterprise (requires Touchstone login). ## U.S. government shutdown: Information for the MIT research community. ## Letter: New funding features in Research@MIT. Enhanced views for funding and forecasting are now available to PIs and administrators in the Research@MIT app. ## Lette
 ----------------------------------------
 
 Source: W.M. Keck Foundation to support research on healthy aging at MIT
@@ -110,9 +105,14 @@ URL: https://news.mit.edu/2026/keck-foundation-to-support-research-on-healthy-ag
 Content: W.M. Keck Foundation to support research on healthy aging at MIT. Assistant Professor Alison Ringel will investigate the intersection of
 ----------------------------------------
 
-Source: News & Announcements | MIT Research Administration Services
-URL: https://ras.mit.edu/about-ras/news-and-events
-Content: This spring, Research Administration Services (RAS) is planning a series of open forums to provide helpful information and updates as well as answer questions on all things related to research administration at MIT. The RAS Forum Series continues on March 4th from 10am to 11am in the Bush Room and via Zoom, covering budgeting and financial management, residual funds, fixed price awards, allowable costs, problematic costing and reporting requirements, and cost sharing. KC and MyCOI-OPA+ will be o
+Source: Publications, presentations, and announcements - MIT Libraries
+URL: https://libraries.mit.edu/creos/research/announcements/
+Content: Libraries home Center for Research on Equitable and Open Scholarship ResearchPublications, presentations, and announcements. Preprint: Topic Brief: Guidance for Reporting on Studies of Open and Equitable Scholarship published in SocArXiv. A new cohort of postdoctoral researchers began work with CREOS this week. The National Science Foundation awards MIT Libraries an Early-concept Grants for Exploratory Research (EAGER) grant of $300,000 to explore a transformative model for evaluating open scien
+----------------------------------------
+
+Source: MIT sues federal science agency over cuts to 'crucial research'
+URL: https://www.masslive.com/news/2025/05/mit-sues-federal-science-agency-over-cuts-to-crucial-research.html
+Content: MIT is suing the National Science Foundation, aiming to halt the organization from cutting funding.
 ----------------------------------------
 
 
@@ -120,7 +120,7 @@ Content: This spring, Research Administration Services (RAS) is planning a serie
 
 Source: The Strategy of Change - MIT Sloan Management Review
 URL: https://sloanreview.mit.edu/series/the-strategy-of-change/
-Content: This series examines data from companies worldwide to provide practical insights for business leaders seeking advantage as they navigate complexity and change.
+Content: This series provides practical insights for business leaders seeking advantage as they navigate complexity and change.
 ----------------------------------------
 
 Source: [PDF] Unearthing a Theory of Change for Creative Capacity Building
@@ -128,19 +128,19 @@ URL: https://d-lab.mit.edu/sites/default/files/inline-files/CITE-unearthing-a-th
 Content: Tanzania Ghana Uganda Continue CCB projects Continue their CCB projects Continue their CCB projects Continue their CCB projects Create or improve other solutions Create new technologies/ solutions Create new technologies/ solutions or improve existing technologies Create new technologies/ solutions Use solutions Use technologies for their own benefit Use technologies for their own benefit Use technologies for their own benefit Disseminate or sell solutions Disseminate new technologies to people 
 ----------------------------------------
 
-Source: Theory of Change: A Tool for Participatory Design - MIT D-Lab
-URL: https://d-lab.mit.edu/news-blog/blog/theory-change-tool-participatory-design
-Content: A theory of change is an explanation of how your initiative will lead to its intended impact. Written out in words, it reads like a causal statement.
-----------------------------------------
-
-Source: [PDF] Towards a theory of process improvement and change - MIT
-URL: http://web.mit.edu/nelsonr/www/A_Theory.3.pdf
-Content: Management practitioners now face a literal alphabet soup of acronyms including Total Quality Management (TQM), Theory of Constraints (TOC) (Goldratt and Cox 1986), Business Process Re-engineering (BPR) (Hammer and Champy 1993), Total Productive Maintenance (TPM), and various flavors of leanness (e.g. lean production, Womack, Jones and Roos 1990; Lean Thinking, Womack and Jones 1996; and the Lean Enterprise). The combination of traditional management approaches and improvisation inherent in proc
+Source: Chapter 2: The conceptual and operational foundations of Theory of Change in relation to strategic thinking in: Strategic Thinking, Design and the Theory of Change
+URL: https://www.elgaronline.com/edcollchap/book/9781803927718/book-part-9781803927718-8.xml
+Content: Chapter 2: The conceptual and operational foundations of Theory of Change in relation to strategic thinking. Chapter 1: Introduction to Strategic Thinking, Design and the Theory of Change. Log in with your Elgar Online account. Strategic Thinking, Design and the Theory of Change. Strategic Thinking, Design and the Theory of Change. Chapter 2: The conceptual and operational foundations of Theory of Change in relation to strategic thinking. Chapter 3: Interactive strategy-making: dynamic adaptatio
 ----------------------------------------
 
 Source: Theory of Change Explained | Why Every Nonprofit Needs This
 URL: https://www.youtube.com/watch?v=cg4J1g0IVHg
 Content: ... strategy to measurement **Timestamps** 00:00 Theory of Change Introduction 00:32 Impact Measurement Framework 01:54 Theory of Change Foundation
+----------------------------------------
+
+Source: [PDF] Explaining Development and Change in Organizations - MIT
+URL: https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Organizational_Learning_and_Change/Ven_de_Ven_Pool_Explaining_Development_and_Change_in_Orgs.pdf
+Content: In each theory: (a) process is viewed as a different cycle 520 Academy of Management Review July Figure 1 Process Theories of Organizational Development and Changea EVOLUTION DIALECTIC Variation-+ Selection * Retention Multiple T s i Conflict -* Synthesis Entities Antithesis _- Populaton scarcity Pluralism (Diversity) Environmental selection Confrontation Unit of Competition Conflict Change LIFE CYCLE TELEOLOGY Stage 4 (Terminate) Dissatisfaction Stage 3 Stage 1 Implement Search/ (Harvest) (Star
 ----------------------------------------
 
 ============================================================
@@ -169,63 +169,74 @@ Filing History (13 filings found):
     Assets:   $3,185,000
 
 ============================================================
-=== WEBSITE CONTENT: https://betterworld.mit.edu ===
+=== WEBSITE CONTENT: https://development.mit.edu ===
 Pages scraped: 3
 
 
 ==================================================
 PAGE: HOMEPAGE
-URL: https://betterworld.mit.edu
-Title: Homepage | MIT for a Better World
-Words: 43
+URL: https://development.mit.edu
+Title: 
+                    Home - MIT Resource Development - MIT Resource Development
+        
+Words: 378
 ==================================================
 
-### Spectrum Magazine
+### What We Do
 
-#### Read the latest issue.
+We build relationships, spark collaborations, and encourage giving in support of MIT's exceptional community.
+All About RD
+Meet Our TeamsResource Development comprises various teams working together to help MIT achieve its goals.Meet the People Behind the Work
 
-From molecules to medicine, cells to systems, MIT is advancing the science of life and the future of care. Across disciplines, researchers decode biology, design therapeutics, and harness AI to translate discovery into practice.Read Spectrum
+### Meet Our Teams
+
+Work With UsJoin a group of passionate individuals driven by intellectual curiosity and an entrepreneurial spirit.Bring Your Talents to MIT
+
+### Work With Us
+
+What are you looking for?
+
+## What are you looking for?
+
+Through thoughtful partnership with philanthropists, Resource Development advances MIT’s mission by enabling breakthroughs in research, expanding the boundaries of knowledge, and accelerating innovations that benefit the world.—Boi Carpenter, Vice President for Resource DevelopmentLearn More About Boi
+Explore MIT’s Fundraising PrioritiesTurning brilliance into breakthroughs takes resources—and that’s where philanthropy makes a difference. Discover MIT’s fundraising priorities and how our community is working together to transform society through education, research, and innovation.Explore Our Priorities
+
+## Explore MIT’s Fundraising Priorities
+
+Stories of Discovery, Impact, GenerosityWe tell stories of MIT’s faculty, students, and staff in action—and how philanthropy helps them thrive.MIT HEALS Leadership Charts a Bold Path for Convergence in Health and Life SciencesMIT faculty Angela Koehler, Iain Cheeseman, and Katharina Ribbeck are shaping the MIT HEALS collaborative as a platform for transformative research, translation, and talent development across MIT.“MIT Taught Me the Human Side of Entrepreneurship”Fellows at the MIT Kuo Sharper Center for Prosperity and Entrepreneurship dream big while staying true to themselves.From Nanoscale to Global Scale: Advancing MIT’s Special Initiatives in Manufacturing, Health, and ClimateNanoscience and nanotechnology are helping to forge progress across MIT’s Presidential Strategic Initiatives—projects deemed critical to MIT’s mission to help solve the world’s greatest challenges.
+
+## Stories of Discovery, Impact, Generosity
+
+### MIT HEALS Leadership Charts a Bold Path for Convergence in Health and Life Sciences
+
+### “MIT Taught Me the Human Side of Entrepreneurship”
+
+Fellows at the MIT Kuo Sharper Center for Prosperity and Entrepreneurship dream big while staying true to themselves.
+From Nanoscale to Global Scale: Advancing MIT’s Special Initiatives in Manufacturing, Health, and ClimateNanoscience and nanotechnology are helping to forge progress across MIT’s Presidential Strategic Initiatives—projects deemed critical to MIT’s mission to help solve the world’s greatest challenges.
+
+### From Nanoscale to Global Scale: Advancing MIT’s Special Initiatives in Manufacturing, Health, and Climate
 
 ==================================================
-PAGE: GRANTS
-URL: https://betterworld.mit.edu/flexible-funding/
-Title: Flexible Funding at MIT | MIT for a Better World
+PAGE: ABOUT
+URL: https://development.mit.edu/about
+Title: 
+                    About - MIT Resource Development - MIT Resource Development
+        
 Words: 0
 ==================================================
 
 
 
 ==================================================
-PAGE: STRATEGY
-URL: https://betterworld.mit.edu/spectrum/issues/spring-2026/janina-ojeiduma-27-eyes-impact-of-environmental-toxins-on-human-health
-Title: MIT Spectrum - Janina Ojeiduma ’27 Eyes Impact of Toxic Chemicals on Human Health | MIT for a Better World
-Words: 849
+PAGE: TEAM
+URL: https://development.mit.edu/teams
+Title: 
+                    Teams - MIT Resource Development - MIT Resource Development
+        
+Words: 0
 ==================================================
 
-# Janina Ojeiduma ’27 Eyes Impact of Toxic Chemicals on Human Health
 
-In her spare time, MIT HEALS SuperUROP scholar learns new languages, sings in gospel choir
-Share
-
-### Share
-
-PHOTO: KEN RICHARDSON
-By Mark Sullivan
-Ask Janina Ojeiduma ’27 to describe one of her foremost personality traits and she’ll tell you: curiosity.
-“I love to find different interests and fall down rabbit holes,” says the biological engineering major from Fulshear, Texas, outside Houston.
-“I get really passionate and excited about novel ideas. Being at MIT has allowed me to really delve into that.”
-Ojeiduma is pursuing anAdvanced Undergraduate Research Opportunity(SuperUROP) through theMIT Health and Life Sciences Collaborative(MIT HEALS) under the supervision of Bevin Engelward, professor of biological engineering. She is investigating the effects of exposure to certain toxic chemicals on human physiology at the cellular level.
-“We want to expand the literature to help with environmental regulations and increase our overall understanding of the impact of these toxins on human health,” she says.
-“In the cases of certain chemicals that are classified as highly toxic, there hasn’t been much accompanying research into the changes these particular toxins can cause in cells or DNA,” she says. “We can do a literature search and find only one or two papers. We know that we can delve into this in depth and do research that no one has really published anywhere. So it’s very exciting.”
-The MIT HEALS SuperUROP is a year-long research experience for juniors and seniors designed to support sustained, high-level undergraduate inquiry. In the 2025–2026 academic year, there were 18 active and funded SuperUROPS associated with MIT HEALS.
-Building on MIT’s Undergraduate Research Opportunities Program (UROP), SuperUROP enables students to pursue a clearly defined research question while working closely with a faculty mentor. Alongside their research, students participate in a companion course that strengthens key skills in experimental design, scientific writing, and research communication, while also engaging in seminars and mentorship. They present their work at an annual SuperUROP showcase.
-Ojeiduma also presented at the MIT HEALS Annual Symposium in March 2026. She was the only undergraduate to do so, having impressed the HEALS leadership with her showcase talk.
-Ojeiduma presents her work at the MIT HEALS Annual Symposium in March 2026.PHOTO: JAKE BELCHER
-“It was a great opportunity to communicate not only technical info, but also the human impact of my research,” she says of her presentation at the MIT HEALS Annual Symposium in March 2026. “It was also super cool to share the stage with some absolute rockstar scientists.”
-Ojeiduma says she enjoys lab research. “I’ve had some great experiences working with human cells,” she says. “It’s a powerful tool, when cells you’ve isolated in a dish are models for what happens in reality. I’m very interested in making those models as accurate as po
-
-[... truncated, 5443 chars total ...]
 
 ==================================================
 OTHER KEY PAGES FOUND (not scraped):
-  contact: https://betterworld.mit.edu/spectrum/issues/spring-2026/economics-and-ai-join-forces-to-expand-reach-of-diagnostics
