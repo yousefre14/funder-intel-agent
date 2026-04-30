@@ -6,13 +6,13 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.57.0-FF4B4B)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## Demo / Screenshot 🖼️
+## Demo / Screenshot 
 
 ![Funder Intelligence Agent Demo](docs/images/demo.png)
 
 > Replace the image path above with your actual screenshot/GIF.
 
-## Overview 📌
+## Overview 
 
 Funder Intelligence Agent is a Streamlit-based AI workflow for grant prospecting and relationship
 strategy. Given a target foundation, it collects public signals (web search, IRS 990 context, and
@@ -22,7 +22,7 @@ introduction paths, and generates editable outreach drafts.
 The app is designed for non-technical operators while preserving a modular, agent-based Python code
 structure for maintainers.
 
-## Key Features ✅
+## Key Features 
 
 - **Multi-stage intelligence pipeline**: Research → Alignment → Connections → Outreach drafts.
 - **Mode-based execution**: Run full pipeline or only one stage (research/alignment/connections/
@@ -33,7 +33,7 @@ structure for maintainers.
 - **Export-ready outputs**: Download each stage as Markdown or a combined report.
 - **Deployment-ready UI**: Streamlit interface with cloud/local secret loading.
 
-## How It Works ⚙️
+## How It Works 
 
 The app orchestrates specialized agents from `app.py`:
 
@@ -60,7 +60,7 @@ flowchart TD
 - `*_outreach_drafts.md`: personalized email drafts
 - Raw supporting files (`*_raw_data.txt`, `*_connections_raw.txt`) for traceability
 
-## Tech Stack 🧰
+## Tech Stack 
 
 - **Frontend / App UI**
   - Streamlit
@@ -78,7 +78,7 @@ flowchart TD
 - **Deployment**
   - Streamlit Community Cloud
 
-## Prerequisites 📋
+## Prerequisites 
 
 - Python **3.11+** recommended
 - `pip` and virtual environment tooling
@@ -88,7 +88,7 @@ flowchart TD
   - Groq API key
 - (Optional but recommended) Streamlit Community Cloud account for hosted deployment
 
-## Installation 🚀
+## Installation 
 
 ```bash
 git clone https://github.com/<your-username>/funder-intel-agent.git
@@ -115,7 +115,7 @@ Run the Streamlit app:
 streamlit run app.py
 ```
 
-## Environment Variables 🔐
+## Environment Variables 
 
 | Variable | Required | Used For |
 |---|---|---|
@@ -125,7 +125,7 @@ streamlit run app.py
 
 > The app supports both local `.env` loading and Streamlit Cloud secrets via `st.secrets`.
 
-## Usage 🧭
+## Usage 
 
 1. Start the app with `streamlit run app.py`.
 2. In the sidebar:
@@ -154,7 +154,7 @@ streamlit run app.py
 - In-app rendered tabs for profile, alignment, connections, and outreach
 - Downloadable complete report (`*_complete_report.md`)
 
-## Project Structure 🗂️
+## Project Structure 
 
 ```text
 funder-intel-agent/
@@ -184,7 +184,7 @@ funder-intel-agent/
 └── README.md
 ```
 
-## Deployment ☁️
+## Deployment 
 
 ### Streamlit Community Cloud
 
@@ -202,40 +202,3 @@ TAVILY_API_KEY="your_tavily_key"
 ```
 
 4. Deploy. Streamlit installs `requirements.txt` and system packages from `packages.txt`.
-
-## Roadmap 🛣️
-
-- Add source citation links in generated Markdown outputs.
-- Add retry/backoff and clearer per-provider error surfacing in the UI.
-- Support batch analysis for multiple funders in one run.
-- Add human feedback loop to improve draft tone and alignment over time.
-- Add test suite and CI checks for core agent/tool modules.
-
-## Contributing 🤝
-
-Contributions are welcome.
-
-1. Fork the repo and create a feature branch.
-2. Make focused, well-documented changes.
-3. Run relevant local checks.
-4. Open a pull request with context, screenshots (if UI changes), and test notes.
-
-## License 📄
-
-This project is licensed under the MIT License.
-
-If you have not added a license file yet, add an `LICENSE` file with MIT terms before publishing.
-
-## Acknowledgments 🙏
-
-- [Streamlit](https://streamlit.io/)
-- [Tavily](https://tavily.com/)
-- [Google Gemini API](https://ai.google.dev/)
-- [Groq](https://groq.com/)
-- [ChromaDB](https://www.trychroma.com/)
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
-
-## Contact 📬
-
-- GitHub: `https://github.com/<your-username>`
-- Email: `<your-email@example.com>`
