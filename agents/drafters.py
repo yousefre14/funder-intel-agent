@@ -16,6 +16,8 @@ import os
 from datetime import datetime
 from rich.console import Console
 from rich.panel import Panel
+from tools.path import get_output_dir, get_safe_name
+
 
 from tools.llm import call_llm
 from tools.org_knowledge import get_full_context
@@ -211,7 +213,7 @@ def _save_drafts(funder_name: str, draft_type: str, result: dict):
     safe_name = funder_name.lower().replace(" ", "_")
     safe_name = "".join(c for c in safe_name if c.isalnum() or c == "_")
     
-    output_dir = "data/output"
+    output_dir = get_output_dir()
     os.makedirs(output_dir, exist_ok=True)
     
     filepath = os.path.join(output_dir, f"{safe_name}_{draft_type}_drafts.md")
@@ -226,10 +228,6 @@ def _save_drafts(funder_name: str, draft_type: str, result: dict):
     
     console.print(f"  [dim]Saved: {filepath}[/dim]")
 
-
-# ============================================================
-# FULL PIPELINE: Everything in One Command
-# ============================================================
 
 def full_pipeline(
     funder_name: str,
@@ -289,7 +287,6 @@ def full_pipeline(
         connection_paths=connection_result.get("connection_analysis", ""),
     )
     
-    # ── Summary ──
     total_time = (datetime.now() - pipeline_start).total_seconds()
     
     console.print(Panel.fit(
@@ -297,11 +294,11 @@ def full_pipeline(
         f"Funder: {funder_name}\n"
         f"Total Time: {total_time:.1f} seconds\n\n"
         f"Files Generated:\n"
-        f"  📋 Funder Profile (.md)\n"
-        f"  🎯 Alignment Brief (.md)\n"
-        f"  🔗 Connection Paths (.md)\n"
-        f"  ✉️  Outreach Drafts (.md)\n"
-        f"  📄 Raw Data (.txt)\n\n"
+        f"  Funder Profile (.md)\n"
+        f"  Alignment Brief (.md)\n"
+        f"  Connection Paths (.md)\n"
+        f"  Outreach Drafts (.md)\n"
+        f"  Raw Data (.txt)\n\n"
         f"All saved to: data/output/",
         border_style="green"
     ))
@@ -315,92 +312,3 @@ def full_pipeline(
         "total_time": total_time,
     }
 
-
-# ============================================================
-# RUN IT
-# ============================================================
-
-if __name__ == "__main__":
-    console.print(Panel.fit(
-        "[bold blue]Funder Intelligence Agent[/bold blue]\n"
-        "Complete Pipeline",
-        border_style="blue"
-    ))
-    
-    console.print("\n[bold]Options:[/bold]")
-    console.print("  1. Full pipeline (research → alignment → connections → drafts)")
-    console.print("  2. Drafts only (using existing research)")
-    
-    choice = input("\nChoice (1 or 2): ").strip()
-    
-    if choice == "2":
-        funder_name = input("Funder name: ").strip()
-        
-        # Load existing files
-        safe_name = funder_name.lower().replace(" ", "_")
-        safe_name = "".join(c for c in safe_name if c.isalnum() or c == "_")
-        
-        profile_path = f"data/output/{safe_name}_profile.md"
-        alignment_path = f"data/output/{safe_name}_alignment.md"
-        connections_path = f"data/output/{safe_name}_connections.md"
-        
-        # Load what exists
-        profile = ""
-        alignment = ""
-        connections = ""
-        
-        for path, name, target in [
-            (profile_path, "profile", "profile"),
-            (alignment_path, "alignment", "alignment"),
-            (connections_path, "connections", "connections"),
-        ]:
-            if os.path.exists(path):
-                with open(path) as f:
-                    content = f.read()
-                if target == "profile":
-                    profile = content
-                elif target == "alignment":
-                    alignment = content
-                else:
-                    connections = content
-                console.print(f"  [green]✓ Loaded {name}[/green]")
-            else:
-                console.print(f"  [yellow]⚠ {name} not found at {path}[/yellow]")
-        
-        if profile:
-            result = draft_initial_outreach(
-                funder_name=funder_name,
-                funder_profile=profile,
-                alignment_brief=alignment,
-                connection_paths=connections,
-            )
-            
-            console.print("\n")
-            console.print(Panel(
-                result["drafts"],
-                title=f"[bold]Outreach Drafts: {funder_name}[/bold]",
-                border_style="green",
-                expand=False,
-            ))
-        else:
-            console.print("[red]Need at least the funder profile. Run full pipeline first.[/red]")
-    
-    else:
-        funder_name = input("Funder name (e.g., 'Ford Foundation'): ").strip()
-        if not funder_name:
-            funder_name = "Ford Foundation"
-        
-        website_url = input("Website URL (or Enter to auto-detect): ").strip() or None
-        
-        result = full_pipeline(funder_name, website_url)
-        
-        # Show the drafts
-        console.print("\n")
-        console.print(Panel(
-            result["outreach"]["drafts"],
-            title=f"[bold]Outreach Drafts: {funder_name}[/bold]",
-            border_style="green",
-            expand=False,
-        ))
-    
-    config.print_usage()

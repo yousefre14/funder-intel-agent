@@ -13,6 +13,8 @@ import os
 from datetime import datetime
 from rich.console import Console
 from rich.panel import Panel
+from tools.path import get_output_dir, get_safe_name
+
 
 from tools.llm import call_llm
 from tools.org_knowledge import get_full_context, search_org_knowledge, get_relevant_context, build_knowledge_base
@@ -124,7 +126,7 @@ def _save_alignment(funder_name: str, result: dict):
         safe_name = funder_name.lower().replace(" ", "_")
         safe_name = "".join(c for c in safe_name if c.isalnum() or c == "_")
         
-        output_dir = "data/output"
+        output_dir = get_output_dir()
         os.makedirs(output_dir, exist_ok=True)
         
         filepath = os.path.join(output_dir, f"{safe_name}_alignment.md")

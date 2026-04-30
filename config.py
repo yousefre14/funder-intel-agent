@@ -30,3 +30,24 @@ def print_usage():
     print("-----------------")
 
 
+def get_secret(key: str) -> str:
+    """
+    Get a secret from either:
+    1. Streamlit Cloud secrets (st.secrets)
+    2. Environment variables (.env file)
+    
+    WHY both? 
+    - Locally: .env file
+    - On Streamlit Cloud: secrets are set in the dashboard
+    """
+    
+    # Try Streamlit secrets first (cloud deployment)
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets") and key in st.secrets:
+            return st.secrets[key]
+    except Exception:
+        pass
+    
+    # Fall back to environment variables (local)
+    return os.getenv(key, "")

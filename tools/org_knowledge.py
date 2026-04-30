@@ -13,12 +13,17 @@ from rich.panel import Panel
 
 import chromadb
 from chromadb.config import Settings
+import tempfile
 
 console = Console()
 
 KNOWLEDGE_DIR = os.path.join("data", "org_knowledge")
-CHROMA_DIR = os.path.join("data", "chromadb")         # Where ChromaDB stores its data
-COLLECTION_NAME = "org_knowledge"                       # Name of our vector collection
+if os.environ.get("STREAMLIT_CLOUD"):
+    CHROMA_DIR = os.path.join(tempfile.gettempdir(), "chromadb")
+else:
+    CHROMA_DIR = os.path.join("data", "chromadb")
+
+COLLECTION_NAME = "org_knowledge"
 
 CHUNK_SIZE = 500      
 CHUNK_OVERLAP = 50    

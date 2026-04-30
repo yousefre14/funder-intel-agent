@@ -8,6 +8,8 @@ import os
 from datetime import datetime
 from rich.console import Console
 from rich.panel import Panel
+from tools.path import get_output_dir, get_safe_name
+
 
 from tools.llm import call_llm
 from tools.connection_search import research_connections, format_connection_data
@@ -149,7 +151,7 @@ def _save_connections(target_name: str, result: dict):
     safe_name = target_name.lower().replace(" ", "_")
     safe_name = "".join(c for c in safe_name if c.isalnum() or c == "_")
     
-    output_dir = "data/output"
+    output_dir = get_output_dir()
     os.makedirs(output_dir, exist_ok=True)
     
     # Save analysis
