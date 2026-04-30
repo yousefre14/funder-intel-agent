@@ -10,8 +10,6 @@
 
 ![Funder Intelligence Agent Demo](demo/videos/funder_intel_agent_video.mp4)
 
-> Replace the image path above with your actual screenshot/GIF.
-
 ## Overview 
 
 Funder Intelligence Agent is a Streamlit-based AI workflow for grant prospecting and relationship
