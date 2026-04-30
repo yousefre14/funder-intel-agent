@@ -1,4 +1,4 @@
-# Funder Intelligence Agent 🔍
+# Funder Intelligence Agent 
 
 *Research funders, map mission alignment, find warm paths, and draft outreach in one Streamlit app.*
 
