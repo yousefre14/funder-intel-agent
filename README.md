@@ -8,7 +8,7 @@
 
 ## Demo / Screenshot 
 
-![Funder Intelligence Agent Demo](docs/images/demo.png)
+![Funder Intelligence Agent Demo](docs/videos/funder_intel_agent.mp4)
 
 > Replace the image path above with your actual screenshot/GIF.
 
