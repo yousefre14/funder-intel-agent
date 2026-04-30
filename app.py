@@ -545,17 +545,26 @@ def apply_custom_css():
         [data-testid="stSidebar"] {
             background: linear-gradient(180deg, #141B2D 0%, #0E1117 100%);
             border-right: 1px solid #1E2A3A;
+            min-width: 320px !important;
+            max-width: 360px !important;
         }
         
-        [data-testid="stSidebar"] .stMarkdown p,
-        [data-testid="stSidebar"] label {
-            color: #A0B0C0 !important;
-        }
-        
-        [data-testid="stSidebar"] h1,
-        [data-testid="stSidebar"] h2,
-        [data-testid="stSidebar"] h3 {
+        /* Style the collapse button so it's visible but unobtrusive */
+        [data-testid="stSidebarCollapseButton"] button {
             color: #4FC3F7 !important;
+            background: transparent !important;
+            border: none !important;
+        }
+        
+        [data-testid="stSidebarCollapseButton"] button:hover {
+            background: rgba(79, 195, 247, 0.15) !important;
+        }
+        
+        /* The reopen arrow when sidebar IS collapsed */
+        [data-testid="stSidebarCollapsedControl"] {
+            background: #1E3A5F;
+            border-radius: 0 8px 8px 0;
+            padding: 8px;
         }
         
         /* ═══════════════════════════════════
