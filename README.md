@@ -91,7 +91,7 @@ flowchart TD
 ## Installation 
 
 ```bash
-git clone https://github.com/<your-username>/funder-intel-agent.git
+git clone https://github.com/yousefre14/funder-intel-agent.git
 cd funder-intel-agent
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
@@ -114,16 +114,6 @@ Run the Streamlit app:
 ```bash
 streamlit run app.py
 ```
-
-## Environment Variables 
-
-| Variable | Required | Used For |
-|---|---|---|
-| `GEMINI_API_KEY` | Yes | Gemini calls for research synthesis, alignment analysis, and connection analysis |
-| `GROQ_API_KEY` | Yes | Groq calls for outreach draft generation |
-| `TAVILY_API_KEY` | Yes | Tavily web search queries for funder and network research |
-
-> The app supports both local `.env` loading and Streamlit Cloud secrets via `st.secrets`.
 
 ## Usage 
 
@@ -183,22 +173,3 @@ funder-intel-agent/
 │   └── chromadb/              # Local ChromaDB persistence
 └── README.md
 ```
-
-## Deployment 
-
-### Streamlit Community Cloud
-
-1. Push this repository to GitHub.
-2. In Streamlit Community Cloud, create a new app and select:
-   - **Repository**: your fork/repo
-   - **Branch**: desired branch
-   - **Main file path**: `app.py`
-3. Add secrets in **App Settings → Secrets**:
-
-```toml
-GEMINI_API_KEY="your_gemini_key"
-GROQ_API_KEY="your_groq_key"
-TAVILY_API_KEY="your_tavily_key"
-```
-
-4. Deploy. Streamlit installs `requirements.txt` and system packages from `packages.txt`.
