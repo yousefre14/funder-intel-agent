@@ -25,7 +25,7 @@ st.set_page_config(
     page_title="Funder Intelligence Agent",
     page_icon="🔍",
     layout="wide",
-    initial_sidebar_state="auto",
+    initial_sidebar_state="expanded",
 )
 
 
@@ -812,7 +812,16 @@ def apply_custom_css():
         
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
-        header {visibility: hidden;}
+        header[data-testid="stHeader"] {
+            background: transparent;
+            height: 0;
+}
+        [data-testid="stSidebarCollapseButton"],
+        [data-testid="stSidebarCollapsedControl"] {
+            visibility: visible !important;
+            display: flex !important;
+            z-index: 999999 !important;
+        }
     </style>
     """, unsafe_allow_html=True)
 
