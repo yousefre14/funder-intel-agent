@@ -6,9 +6,12 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.57.0-FF4B4B)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## Demo / Screenshot 
-
-![Funder Intelligence Agent Demo](demo/videos/funder_intel_agent_video.mp4)
+## Demo <p align="center">
+  <video src="(https://github.com/user-attachments/assets/f9c5d6f5-534a-4e1b-bb7a-7c1a6281e8fb)" 
+         width="800" 
+         controls>
+  </video>
+</p>
 
 ## Overview 
 
