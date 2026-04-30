@@ -8,7 +8,7 @@
 
 ## Demo 
 <p align="center">
-  <video src="(https://github.com/user-attachments/assets/f9c5d6f5-534a-4e1b-bb7a-7c1a6281e8fb)" 
+  <video src="https://github.com/user-attachments/assets/f9c5d6f5-534a-4e1b-bb7a-7c1a6281e8fb" 
          width="800" 
          controls>
   </video>
