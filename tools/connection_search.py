@@ -6,12 +6,30 @@ our organization and a target funder/person.
 """
 import requests
 import re
-from rich.console import Console
-from rich.table import Table
 from tavily import TavilyClient
 import config
 
-console = Console()
+try:
+    from rich.console import Console
+    from rich.panel import Panel
+    from rich.table import Table
+    console = Console()
+except ImportError:
+    class FallbackConsole:
+        """Fallback when rich is not installed (e.g., Streamlit Cloud)"""
+        def print(self, msg="", *args, **kwargs):
+            import re as _re
+            clean = _re.sub(r"\$$.*?\$$", "", str(msg))
+            print(clean)
+    class FallbackPanel:
+        @staticmethod
+        def fit(msg, **kwargs):
+            return msg
+    console = FallbackConsole()
+    Panel = FallbackPanel
+    Table = None
+
+
 PROPUBLICA_URL = "https://projects.propublica.org/nonprofits/api/v2"
 
 def get_board_members(ein: str) -> list:

@@ -7,15 +7,32 @@ Then provides SEMANTIC SEARCH (search by meaning, not just keywords).
 import os
 import re
 from pathlib import Path
-from rich.console import Console
-from rich.table import Table
-from rich.panel import Panel
 
 import chromadb
 from chromadb.config import Settings
 import tempfile
 
-console = Console()
+try:
+    from rich.console import Console
+    from rich.panel import Panel
+    from rich.table import Table
+    console = Console()
+except ImportError:
+    class FallbackConsole:
+        """Fallback when rich is not installed (e.g., Streamlit Cloud)"""
+        def print(self, msg="", *args, **kwargs):
+            import re as _re
+            clean = _re.sub(r"\$$.*?\$$", "", str(msg))
+            print(clean)
+    class FallbackPanel:
+        @staticmethod
+        def fit(msg, **kwargs):
+            return msg
+    console = FallbackConsole()
+    Panel = FallbackPanel
+    Table = None
+
+
 
 KNOWLEDGE_DIR = os.path.join("data", "org_knowledge")
 if os.environ.get("STREAMLIT_CLOUD"):

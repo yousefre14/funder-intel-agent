@@ -11,8 +11,6 @@ THIS agent creates strategic intelligence.
 
 import os
 from datetime import datetime
-from rich.console import Console
-from rich.panel import Panel
 from tools.path import get_output_dir, get_safe_name
 
 
@@ -25,7 +23,27 @@ from agents.connector import find_connection_paths
 
 import config
 
-console = Console()
+try:
+    from rich.console import Console
+    from rich.panel import Panel
+    from rich.table import Table
+    console = Console()
+except ImportError:
+    class FallbackConsole:
+        """Fallback when rich is not installed (e.g., Streamlit Cloud)"""
+        def print(self, msg="", *args, **kwargs):
+            import re as _re
+            clean = _re.sub(r"\$$.*?\$$", "", str(msg))
+            print(clean)
+    class FallbackPanel:
+        @staticmethod
+        def fit(msg, **kwargs):
+            return msg
+    console = FallbackConsole()
+    Panel = FallbackPanel
+    Table = None
+
+
 
 def create_alignment_brief(
     funder_name: str,
