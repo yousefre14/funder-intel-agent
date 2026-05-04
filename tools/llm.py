@@ -42,21 +42,22 @@ def call_llm(prompt:str , system_prompt:str="", provider:str="gemini" )-> str:
 
     ## primary provider
 
-    if provider == "groq":
-            try:
-                return _call_groq(prompt, system_prompt)
-            except Exception as e:
-                console.print(f"[yellow]⚠ Groq failed: {e}[/yellow]")
-                console.print("[yellow]  Trying Gemini fallback...[/yellow]")
-                return _call_gemini(prompt, system_prompt)
+    # if provider == "groq":
+    #         try:
+    #             return _call_groq(prompt, system_prompt)
+    #         except Exception as e:
+    #             console.print(f"[yellow]⚠ Groq failed: {e}[/yellow]")
+    #             console.print("[yellow]  Trying Gemini fallback...[/yellow]")
+    #             return _call_gemini(prompt, system_prompt)
         
-    elif provider == "gemini":
+    if provider == "gemini":
             try:
                 return _call_gemini(prompt, system_prompt)
             except Exception as e:
                 console.print(f"[yellow]⚠ Gemini failed: {e}[/yellow]")
                 console.print("[yellow]  Trying Groq fallback...[/yellow]")
-                return _call_groq(prompt, system_prompt)
+                return KeyError
+                # return _call_groq(prompt, system_prompt)
         
     else:
             raise ValueError(f"Unknown provider: {provider}")
@@ -78,21 +79,21 @@ def _call_gemini(prompt:str, system_prompt:str="")-> str:
     config.track_usage("gemini")
     return response.text
 
-def _call_groq(prompt: str, system_prompt: str = "") -> str:
-    """Call Groq API (Llama 3.3 70B)"""
-    client = Groq(api_key=config.GROQ_API_KEY)
+# def _call_groq(prompt: str, system_prompt: str = "") -> str:
+#     """Call Groq API (Llama 3.3 70B)"""
+#     client = Groq(api_key=config.GROQ_API_KEY)
     
-    messages = []
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": prompt})
+#     messages = []
+#     if system_prompt:
+#         messages.append({"role": "system", "content": system_prompt})
+#     messages.append({"role": "user", "content": prompt})
     
-    response = client.chat.completions.create(
-        model=config.GROQ_MODEL,
-        messages=messages,
-        max_tokens=config.MAX_TOKENS,
-        temperature=0.3,  # more factual
-    )
+#     response = client.chat.completions.create(
+#         model=config.GROQ_MODEL,
+#         messages=messages,
+#         max_tokens=config.MAX_TOKENS,
+#         temperature=0.3,  # more factual
+#     )
     
-    config.track_usage("groq")
-    return response.choices[0].message.content
+#     config.track_usage("groq")
+#     return response.choices[0].message.content
