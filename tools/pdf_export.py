@@ -5,21 +5,15 @@ import re
 from fpdf import FPDF
 
 
-# Map Unicode chars to Latin-1 safe equivalents
 UNICODE_REPLACEMENTS = {
-    # Bullets
     "•": "-", "●": "-", "◦": "-", "▪": "-", "‣": "-", "·": "-",
-    # Arrows
     "→": "->", "←": "<-", "⇒": "=>", "⇐": "<=",
-    # Dashes & punctuation
     "—": "-", "–": "-", "…": "...",
     "“": '"', "”": '"', "‘": "'", "’": "'", "«": '"', "»": '"',
-    # Marks
     "✓": "[x]", "✔": "[x]", "✗": "[ ]", "✘": "[ ]",
     "★": "*", "☆": "*",
     "©": "(c)", "®": "(R)", "™": "(TM)",
     "°": " deg", "€": "EUR", "£": "GBP", "¥": "JPY",
-    # Common emojis in your app
     "🔍": "[Search]", "📋": "[Profile]", "🎯": "[Target]",
     "🔗": "[Link]", "✉️": "[Email]", "✉": "[Email]",
     "🚀": "[Launch]", "💰": "[Cost]", "📄": "[Doc]",
@@ -39,6 +33,21 @@ def _sanitize_for_latin1(text: str) -> str:
     return text.encode("latin-1", errors="ignore").decode("latin-1")
 
 
+def _break_long_words(text: str, max_chunk: int = 60) -> str:
+    """Insert spaces inside very long unbroken strings (URLs, paths)."""
+    if not text:
+        return text
+    words = text.split(" ")
+    broken = []
+    for word in words:
+        if len(word) > max_chunk:
+            chunks = [word[i:i + max_chunk] for i in range(0, len(word), max_chunk)]
+            broken.append(" ".join(chunks))
+        else:
+            broken.append(word)
+    return " ".join(broken)
+
+
 class FunderReportPDF(FPDF):
     """Custom PDF using built-in Helvetica (no font files needed)."""
 
@@ -46,7 +55,7 @@ class FunderReportPDF(FPDF):
         super().__init__()
         self.funder_name = _sanitize_for_latin1(funder_name)
         self.set_auto_page_break(auto=True, margin=20)
-        self.set_margins(20, 20, 20)
+        self.set_margins(15, 15, 15)
 
     def footer(self):
         self.set_y(-15)
@@ -83,12 +92,13 @@ class FunderReportPDF(FPDF):
 
 
 def _clean_markdown_line(line: str) -> str:
-    """Strip markdown markers and sanitize Unicode."""
-    line = re.sub(r"\*\*(.+?)\*\*", r"\1", line)        # bold
-    line = re.sub(r"\*(.+?)\*", r"\1", line)            # italic
-    line = re.sub(r"`(.+?)`", r"\1", line)              # inline code
-    line = re.sub(r"$$(.+?)$$\(.+?\)", r"\1", line)     # links
-    return _sanitize_for_latin1(line.strip())
+    """Strip markdown markers, sanitize Unicode, break long words."""
+    line = re.sub(r"\*\*(.+?)\*\*", r"\1", line)
+    line = re.sub(r"\*(.+?)\*", r"\1", line)
+    line = re.sub(r"`(.+?)`", r"\1", line)
+    line = re.sub(r"$$(.+?)$$\(.+?\)", r"\1", line)
+    cleaned = _sanitize_for_latin1(line.strip())
+    return _break_long_words(cleaned)
 
 
 def markdown_to_pdf_bytes(
@@ -105,7 +115,6 @@ def markdown_to_pdf_bytes(
     for raw_line in md_content.split("\n"):
         line = raw_line.rstrip()
 
-        # Skip dividers and empty lines
         if not line or line.startswith("=") or line.startswith("---"):
             pdf.ln(3)
             continue
@@ -115,7 +124,7 @@ def markdown_to_pdf_bytes(
             pdf.ln(4)
             pdf.set_font("Helvetica", "B", 18)
             pdf.set_text_color(26, 54, 93)
-            pdf.multi_cell(0, 9, _clean_markdown_line(line[2:]))
+            pdf.multi_cell(pdf.epw, 9, _clean_markdown_line(line[2:]))
             pdf.ln(2)
             continue
 
@@ -124,7 +133,7 @@ def markdown_to_pdf_bytes(
             pdf.ln(3)
             pdf.set_font("Helvetica", "B", 14)
             pdf.set_text_color(44, 82, 130)
-            pdf.multi_cell(0, 8, _clean_markdown_line(line[3:]))
+            pdf.multi_cell(pdf.epw, 8, _clean_markdown_line(line[3:]))
             pdf.ln(1)
             continue
 
@@ -132,29 +141,29 @@ def markdown_to_pdf_bytes(
         if line.startswith("### "):
             pdf.set_font("Helvetica", "B", 12)
             pdf.set_text_color(45, 55, 72)
-            pdf.multi_cell(0, 7, _clean_markdown_line(line[4:]))
+            pdf.multi_cell(pdf.epw, 7, _clean_markdown_line(line[4:]))
             continue
 
-        # Bullets — using a Latin-1 safe character
+        # Bullets
         stripped = line.lstrip()
         if stripped.startswith(("- ", "* ", "• ")):
             pdf.set_font("Helvetica", "", 11)
             pdf.set_text_color(45, 55, 72)
             text = _clean_markdown_line(stripped[2:])
-            pdf.multi_cell(0, 6, f"   -  {text}")
+            pdf.multi_cell(pdf.epw, 6, f"   -  {text}")
             continue
 
         # Numbered list
         if re.match(r"^\d+\.\s", stripped):
             pdf.set_font("Helvetica", "", 11)
             pdf.set_text_color(45, 55, 72)
-            pdf.multi_cell(0, 6, _clean_markdown_line(line))
+            pdf.multi_cell(pdf.epw, 6, _clean_markdown_line(line))
             continue
 
         # Default paragraph
         pdf.set_font("Helvetica", "", 11)
         pdf.set_text_color(45, 55, 72)
-        pdf.multi_cell(0, 6, _clean_markdown_line(line))
+        pdf.multi_cell(pdf.epw, 6, _clean_markdown_line(line))
 
     buffer = BytesIO()
     pdf.output(buffer)
