@@ -56,11 +56,11 @@ def call_llm(prompt:str , system_prompt:str="", provider:str="gemini" )-> str:
             except Exception as e:
                 console.print(f"[yellow]⚠ Gemini failed: {e}[/yellow]")
                 console.print("[yellow]  Trying Groq fallback...[/yellow]")
-                return KeyError
+                raise ValueError(f"Unknown provider: {provider}")
                 # return _call_groq(prompt, system_prompt)
         
-    else:
-            raise ValueError(f"Unknown provider: {provider}")
+    # else:
+    #         raise ValueError(f"Unknown provider: {provider}")
 
 
 def _call_gemini(prompt:str, system_prompt:str="")-> str:
