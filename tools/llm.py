@@ -1,99 +1,61 @@
 import sys
 import os
+import re
 
 from google import genai
-from groq import Groq
 import config
 
 try:
     from rich.console import Console
-    from rich.panel import Panel
-    from rich.table import Table
     console = Console()
 except ImportError:
     class FallbackConsole:
-        """Fallback when rich is not installed (e.g., Streamlit Cloud)"""
+        """Fallback when rich isn't installed (e.g., Streamlit Cloud)."""
         def print(self, msg="", *args, **kwargs):
-            import re as _re
-            clean = _re.sub(r"\$$.*?\$$", "", str(msg))
+            # Strip rich markup like [yellow]...[/yellow]
+            clean = re.sub(r"$$/?[a-zA-Z0-9 _#]+$$", "", str(msg))
             print(clean)
-    class FallbackPanel:
-        @staticmethod
-        def fit(msg, **kwargs):
-            return msg
     console = FallbackConsole()
-    Panel = FallbackPanel
-    Table = None
 
 
-
-def call_llm(prompt:str , system_prompt:str="", provider:str="gemini" )-> str:
+def call_llm(prompt: str, system_prompt: str = "", provider: str = "gemini") -> str:
     """
-    Call an LLM with automatic fallback.
-    
+    Call an LLM provider.
+
     Args:
-        prompt: The user message
-        system_prompt: System instructions (how the LLM should behave)
-        provider: "gemini" or "groq" — defaults to gemini
-    
+        prompt: The user message.
+        system_prompt: System instructions.
+        provider: Currently only "gemini" is supported.
+
     Returns:
-        The LLM's response text
+        The LLM's response text.
+
+    Raises:
+        ValueError: If an unsupported provider is passed.
+        RuntimeError: If the LLM call fails.
     """
-
-    ## primary provider
-
-    # if provider == "groq":
-    #         try:
-    #             return _call_groq(prompt, system_prompt)
-    #         except Exception as e:
-    #             console.print(f"[yellow]⚠ Groq failed: {e}[/yellow]")
-    #             console.print("[yellow]  Trying Gemini fallback...[/yellow]")
-    #             return _call_gemini(prompt, system_prompt)
-        
     if provider == "gemini":
-            try:
-                return _call_gemini(prompt, system_prompt)
-            except Exception as e:
-                console.print(f"[yellow]⚠ Gemini failed: {e}[/yellow]")
-                console.print("[yellow]  Trying Groq fallback...[/yellow]")
-                raise ValueError(f"Unknown provider: {provider}")
-                # return _call_groq(prompt, system_prompt)
-        
-    # else:
-    #         raise ValueError(f"Unknown provider: {provider}")
+        try:
+            return _call_gemini(prompt, system_prompt)
+        except Exception as e:
+            console.print(f"[red]✗ Gemini call failed: {e}[/red]")
+            raise RuntimeError(f"Gemini call failed: {e}") from e
+
+    raise ValueError(f"Unknown provider: {provider!r}. Supported: 'gemini'.")
 
 
-def _call_gemini(prompt:str, system_prompt:str="")-> str:
-    "call google gemini api"
+def _call_gemini(prompt: str, system_prompt: str = "") -> str:
+    """Call the Google Gemini API."""
     client = genai.Client(api_key=config.GEMINI_API_KEY)
-    # Build the full prompt
+
     full_prompt = prompt
     if system_prompt:
-        full_prompt = f"{system_prompt}\n\n---\n\n{full_prompt}"
-    
+        full_prompt = f"{system_prompt}\n\n---\n\n{prompt}"
+
     response = client.models.generate_content(
         model=config.GEMINI_Model,
         contents=full_prompt,
     )
-    
+
     config.track_usage("gemini")
     return response.text
-
-# def _call_groq(prompt: str, system_prompt: str = "") -> str:
-#     """Call Groq API (Llama 3.3 70B)"""
-#     client = Groq(api_key=config.GROQ_API_KEY)
-    
-#     messages = []
-#     if system_prompt:
-#         messages.append({"role": "system", "content": system_prompt})
-#     messages.append({"role": "user", "content": prompt})
-    
-#     response = client.chat.completions.create(
-#         model=config.GROQ_MODEL,
-#         messages=messages,
-#         max_tokens=config.MAX_TOKENS,
-#         temperature=0.3,  # more factual
-#     )
-    
-#     config.track_usage("groq")
-#     return response.choices[0].message.content
