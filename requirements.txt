@@ -10,4 +10,4 @@ streamlit==1.57.0
 plotly==6.7.0
 xhtml2pdf==0.2.16
 pdfkit==1.0.0
-
+wkhtmltopdf
