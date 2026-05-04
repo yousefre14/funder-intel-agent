@@ -2,7 +2,7 @@
 import markdown
 import pdfkit
 from io import BytesIO
-import datetime
+from datetime import datetime
 
 PDF_CSS = """
 <style>

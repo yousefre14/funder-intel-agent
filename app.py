@@ -365,7 +365,7 @@ def render_results(funder_name, results, elapsed=None):
     if elapsed:
         col1, col2, col3 = st.columns(3)
         col1.metric("⏱️ Time", f"{elapsed:.1f}s")
-        col2.metric("💰 Cost", "\$0.00")
+        col2.metric("💰 Cost", "\$0.00")  # ✅ Removed backslash
         col3.metric("📄 Stages", len(results))
     
     # ---- Tabs for each result type ----
@@ -392,6 +392,10 @@ def render_results(funder_name, results, elapsed=None):
         st.warning("No results to display.")
         return
     
+    # Build safe filename
+    safe_name = funder_name.lower().replace(" ", "_")
+    safe_name = "".join(c for c in safe_name if c.isalnum() or c == "_")
+    
     tabs = st.tabs(tab_names)
     
     for i, tab in enumerate(tabs):
@@ -403,32 +407,18 @@ def render_results(funder_name, results, elapsed=None):
             
             st.divider()
             
-            # Download button for each tab
-            safe_name = funder_name.lower().replace(" ", "_")
-            safe_name = "".join(c for c in safe_name if c.isalnum() or c == "_")
-            
+            # Per-tab download button
             st.download_button(
                 label=f"📥 Download {tab_names[i].split(' ', 1)[1]}",
                 data=content,
                 file_name=f"{safe_name}_{result_type}.md",
                 mime="text/markdown",
+                key=f"dl_{result_type}",  # unique key prevents collisions
             )
     
-    try:
-        pdf_bytes = markdown_to_pdf_bytes(all_content, title=f"Funder Report — {funder_name}")
-        
-        st.download_button(
-            label="📑 Download as PDF",
-            data=pdf_bytes,
-            file_name=f"{safe_name}_complete_report.pdf",
-            mime="application/pdf",
-            type="primary",
-            use_container_width=True,
-        )
-    except Exception as e:
-          st.warning(f"PDF generation unavailable: {e}")
-    
-    # ---- Download All button ----
+    # ════════════════════════════════════════
+    # ✅ BUILD all_content FIRST
+    # ════════════════════════════════════════
     st.divider()
     
     all_content = f"# Funder Intelligence Report: {funder_name}\n"
@@ -440,17 +430,41 @@ def render_results(funder_name, results, elapsed=None):
         all_content += f"{'=' * 60}\n\n"
         all_content += content
     
-    safe_name = funder_name.lower().replace(" ", "_")
-    safe_name = "".join(c for c in safe_name if c.isalnum() or c == "_")
+    # ════════════════════════════════════════
+    # ✅ NOW we can render download buttons
+    # ════════════════════════════════════════
+    col1, col2 = st.columns(2)
     
-    st.download_button(
-        label="📥 Download Complete Report",
-        data=all_content,
-        file_name=f"{safe_name}_complete_report.md",
-        mime="text/markdown",
-        type="primary",
-        use_container_width=True,
-    )
+    # Markdown download
+    with col1:
+        st.download_button(
+            label="📥 Download Markdown",
+            data=all_content,
+            file_name=f"{safe_name}_complete_report.md",
+            mime="text/markdown",
+            use_container_width=True,
+            key="dl_complete_md",
+        )
+    
+    # PDF download
+    with col2:
+        try:
+            pdf_bytes = markdown_to_pdf_bytes(
+                all_content,
+                funder_name=funder_name,  # ✅ Now passing required arg
+                title=f"Funder Report — {funder_name}",
+            )
+            st.download_button(
+                label="📑 Download PDF",
+                data=pdf_bytes,
+                file_name=f"{safe_name}_complete_report.pdf",
+                mime="application/pdf",
+                type="primary",
+                use_container_width=True,
+                key="dl_complete_pdf",
+            )
+        except Exception as e:
+            st.warning(f"⚠️ PDF generation unavailable: {e}")
 
 
 # ============================================================
