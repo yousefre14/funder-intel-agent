@@ -18,6 +18,7 @@ import streamlit as st
 import os
 import time
 from datetime import datetime
+from tools.pdf_export import markdown_to_pdf_bytes
 
 # ---- Page Configuration ----
 # This MUST be the first Streamlit command in the file
@@ -412,6 +413,20 @@ def render_results(funder_name, results, elapsed=None):
                 file_name=f"{safe_name}_{result_type}.md",
                 mime="text/markdown",
             )
+    
+    try:
+        pdf_bytes = markdown_to_pdf_bytes(all_content, title=f"Funder Report — {funder_name}")
+        
+        st.download_button(
+            label="📑 Download as PDF",
+            data=pdf_bytes,
+            file_name=f"{safe_name}_complete_report.pdf",
+            mime="application/pdf",
+            type="primary",
+            use_container_width=True,
+        )
+    except Exception as e:
+          st.warning(f"PDF generation unavailable: {e}")
     
     # ---- Download All button ----
     st.divider()
