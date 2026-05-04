@@ -8,5 +8,5 @@ groq==1.1.2
 chromadb==1.5.7
 streamlit==1.57.0
 plotly==6.7.0
-xhtml2pdf==0.2.16
+fpdf2==2.8.1
 markdown==3.7
