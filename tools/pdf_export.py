@@ -1,6 +1,6 @@
 """Convert markdown reports to styled PDFs."""
 import markdown
-import pdfkit
+from xhtml2pdf import pisa
 from io import BytesIO
 from datetime import datetime
 
@@ -109,5 +109,6 @@ def markdown_to_pdf_bytes(md_content: str,funder_name:str, title: str = "Funder 
         "enable-local-file-access": None,
     }
 
-    pdf_bytes = pdfkit.from_string(full_html, False, options=options)
-    return pdf_bytes
+    buffer = BytesIO()
+    pisa.CreatePDF(full_html, dest=buffer)
+    return buffer.getvalue()
