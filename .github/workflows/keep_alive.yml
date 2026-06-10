@@ -1,34 +1,3 @@
 name: Keep Alive
 
-on:
-  schedule:
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
 
-jobs:
-  wake:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install Playwright
-        run: npx playwright install chromium --with-deps
-
-      - name: Open Streamlit app
-        run: |
-          node -e "
-          const { chromium } = require('playwright');
-          (async () => {
-            const browser = await chromium.launch();
-            const page = await browser.newPage();
-            await page.goto('https://funder-intel-agent.streamlit.app', { waitUntil: 'networkidle', timeout: 60000 });
-            await page.waitForTimeout(10000);
-            console.log('Done');
-            await browser.close();
-          })();
-          "
