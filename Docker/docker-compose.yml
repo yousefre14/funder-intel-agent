@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    depends_on:
+      - chromadb
+    environment:
+      - CHROMA_HOST=chromadb
+    env_file:
+      - .env
+
+  chromadb:
+    image: chromadb/chroma
+    volumes:
+      - chroma_data:/chroma/chroma
+#tha app will connected to chromadb:8000 
