@@ -2,16 +2,16 @@
   
 #build stage 
 FROM python:3.11-slim AS builder
-WORKDIR /app 
-COPY requirments.txt .
-RUN pip install --no-cache-dir --user -r requirments.txt
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
 
 #Run stage
-FROM pyhton:3.11-slim
+FROM python:3.11-slim
 WORKDIR /app
-COPY --from= builder /root/.local/root/.local
+COPY --from=builder /root/.local /root/.local
 #copy the whole other files tools,prompts 
 COPY . .
 ENV PATH=/root/.local/bin:$PATH
 EXPOSE 8501
-CMD ["streamlit","run","app.py","--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0"]
