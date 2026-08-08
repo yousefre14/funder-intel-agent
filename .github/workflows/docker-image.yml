@@ -19,7 +19,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -f Docker/Dockerfile -t yousefreda/funder-intel-agent:latest .
+          docker build -f Docker/dockerfile -t yousefreda/funder-intel-agent:latest .
 
       - name: Push Docker image
         run: |
