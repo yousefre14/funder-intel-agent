@@ -9,7 +9,7 @@ GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 TAVILY_API_KEY=os.getenv("TAVILY_API_KEY")
 
 GEMINI_Model= "gemini-2.0-flash"
-GROQ_MODEL = "llama-3.3-70b-versatile" 
+GROQ_MODEL = "openai/gpt-oss-120b" 
 MAX_TOKENS = 4096
 
 
